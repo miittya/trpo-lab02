@@ -1,6 +1,6 @@
 import unittest
 
-from calculator import add, divide
+from calculator import add, divide, multiply
 
 
 class CalculatorTests(unittest.TestCase):
@@ -19,6 +19,15 @@ class CalculatorTests(unittest.TestCase):
     def test_divide_by_zero(self):
         with self.assertRaises(ValueError):
             divide(10, 0)
+    
+    def test_multiply_positive_numbers(self):
+        self.assertEqual(multiply(4, 3), 12)
+
+    def test_multiply_by_negative_number(self):
+        self.assertEqual(multiply(4, -3), -12)
+
+    def test_multiply_by_zero(self):
+        self.assertEqual(multiply(7, 0), 0)
 
 
 if __name__ == "__main__":
