@@ -25,3 +25,14 @@ jobs:
 
       - name: Run unit tests
         run: python -m unittest discover -v
+
+      - name: Generate documentation
+        run: python -m pydoc -w calculator
+
+      - name: Upload documentation
+        uses: actions/upload-artifact@v7
+        with:
+          name: calculator-docs
+          path: calculator.html
+          if-no-files-found: error
+          retention-days: 30
