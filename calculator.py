@@ -14,3 +14,8 @@ def divide(a, b):
     if b == 0:
         raise ValueError("Деление на ноль запрещено")
     return a / b
+
+
+def multiply(a, b):
+    """Вернуть произведение двух чисел."""
+    return a * b
